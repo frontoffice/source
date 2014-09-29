@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C28E7CDB-51D9-4AA7-B975-09ECB1FF2DAF}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>nTierDAL</RootNamespace>
+    <AssemblyName>nTierDAL</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=4.2.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="aspnet_Employees.cs">
+      <DependentUpon>FrontOfficeCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspnet_Membership.cs">
+      <DependentUpon>FrontOfficeCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspnet_Roles.cs">
+      <DependentUpon>FrontOfficeCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspnet_Users.cs">
+      <DependentUpon>FrontOfficeCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\CityDAL.cs" />
+    <Compile Include="DAL\CommonDAL.cs" />
+    <Compile Include="DAL\CompanyDAL.cs" />
+    <Compile Include="DAL\CategoryDAL.cs" />
+    <Compile Include="DAL\BranchDAL.cs" />
+    <Compile Include="DAL\AreasDAL.cs" />
+    <Compile Include="DAL\OrderDAL.cs" />
+    <Compile Include="DAL\CustomerDAL.cs" />
+    <Compile Include="DAL\ProductDAL.cs" />
+    <Compile Include="DAL\CountryDAL.cs" />
+    <Compile Include="FrontOfficeCRM.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FrontOfficeCRM.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FrontOfficeCRM.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FrontOfficeCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FrontOfficeCRM.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FrontOfficeCRM.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="GetBranchAreaByBranch_Result.cs">
+      <DependentUpon>FrontOfficeCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetProductsByCategory_Result.cs">
+      <DependentUpon>FrontOfficeCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="tbl_AREAS.cs">
+      <DependentUpon>FrontOfficeCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_BRANCH.cs">
+      <DependentUpon>FrontOfficeCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_CATEGORY.cs">
+      <DependentUpon>FrontOfficeCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_CITY.cs">
+      <DependentUpon>FrontOfficeCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_COMPANY.cs">
+      <DependentUpon>FrontOfficeCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_COUNTRY.cs">
+      <DependentUpon>FrontOfficeCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_CUSTOMER.cs">
+      <DependentUpon>FrontOfficeCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_ORDER.cs">
+      <DependentUpon>FrontOfficeCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_ORDER_DETAIL.cs">
+      <DependentUpon>FrontOfficeCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_PRODUCTS.cs">
+      <DependentUpon>FrontOfficeCRM.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="FrontOfficeCRM.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>FrontOfficeCRM.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+    <None Include="FrontOfficeCRM.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>FrontOfficeCRM.Context.cs</LastGenOutput>
+    </None>
+    <None Include="FrontOfficeCRM.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>FrontOfficeCRM.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

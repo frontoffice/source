@@ -1,0 +1,1619 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="FrontOfficeCRM.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="FrontOfficeCRMStoreContainer">
+          <EntitySet Name="aspnet_Employees" EntityType="FrontOfficeCRM.Store.aspnet_Employees" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="aspnet_Membership" EntityType="FrontOfficeCRM.Store.aspnet_Membership" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="aspnet_Roles" EntityType="FrontOfficeCRM.Store.aspnet_Roles" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="aspnet_Users" EntityType="FrontOfficeCRM.Store.aspnet_Users" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="aspnet_UsersInRoles" EntityType="FrontOfficeCRM.Store.aspnet_UsersInRoles" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tbl_AREAS" EntityType="FrontOfficeCRM.Store.tbl_AREAS" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tbl_BRANCH" EntityType="FrontOfficeCRM.Store.tbl_BRANCH" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tbl_CATEGORY" EntityType="FrontOfficeCRM.Store.tbl_CATEGORY" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tbl_CITY" EntityType="FrontOfficeCRM.Store.tbl_CITY" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tbl_COMPANY" EntityType="FrontOfficeCRM.Store.tbl_COMPANY" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tbl_COUNTRY" EntityType="FrontOfficeCRM.Store.tbl_COUNTRY" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tbl_CUSTOMER" EntityType="FrontOfficeCRM.Store.tbl_CUSTOMER" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tbl_ORDER" EntityType="FrontOfficeCRM.Store.tbl_ORDER" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tbl_ORDER_DETAIL" EntityType="FrontOfficeCRM.Store.tbl_ORDER_DETAIL" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tbl_PRODUCTS" EntityType="FrontOfficeCRM.Store.tbl_PRODUCTS" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK__aspnet_Me__UserI__1EA48E88" Association="FrontOfficeCRM.Store.FK__aspnet_Me__UserI__1EA48E88">
+            <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+            <End Role="aspnet_Membership" EntitySet="aspnet_Membership" />
+          </AssociationSet>
+          <AssociationSet Name="FK__aspnet_Us__RoleI__46B27FE2" Association="FrontOfficeCRM.Store.FK__aspnet_Us__RoleI__46B27FE2">
+            <End Role="aspnet_Roles" EntitySet="aspnet_Roles" />
+            <End Role="aspnet_UsersInRoles" EntitySet="aspnet_UsersInRoles" />
+          </AssociationSet>
+          <AssociationSet Name="FK__aspnet_Us__UserI__45BE5BA9" Association="FrontOfficeCRM.Store.FK__aspnet_Us__UserI__45BE5BA9">
+            <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+            <End Role="aspnet_UsersInRoles" EntitySet="aspnet_UsersInRoles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_aspnet_Employees_aspnet_Employees" Association="FrontOfficeCRM.Store.FK_aspnet_Employees_aspnet_Employees">
+            <End Role="aspnet_Employees" EntitySet="aspnet_Employees" />
+            <End Role="aspnet_Employees1" EntitySet="aspnet_Employees" />
+          </AssociationSet>
+          <AssociationSet Name="FK_aspnet_Employees_aspnet_Users" Association="FrontOfficeCRM.Store.FK_aspnet_Employees_aspnet_Users">
+            <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+            <End Role="aspnet_Employees" EntitySet="aspnet_Employees" />
+          </AssociationSet>
+          <AssociationSet Name="FK_aspnet_Employees_tbl_CITY" Association="FrontOfficeCRM.Store.FK_aspnet_Employees_tbl_CITY">
+            <End Role="tbl_CITY" EntitySet="tbl_CITY" />
+            <End Role="aspnet_Employees" EntitySet="aspnet_Employees" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Order_aspnet_Employees" Association="FrontOfficeCRM.Store.FK_Order_aspnet_Employees">
+            <End Role="aspnet_Employees" EntitySet="aspnet_Employees" />
+            <End Role="tbl_ORDER" EntitySet="tbl_ORDER" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Order_aspnet_Employees_Modified_By" Association="FrontOfficeCRM.Store.FK_Order_aspnet_Employees_Modified_By">
+            <End Role="aspnet_Employees" EntitySet="aspnet_Employees" />
+            <End Role="tbl_ORDER" EntitySet="tbl_ORDER" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Order_tbl_COMPANY" Association="FrontOfficeCRM.Store.FK_Order_tbl_COMPANY">
+            <End Role="tbl_COMPANY" EntitySet="tbl_COMPANY" />
+            <End Role="tbl_ORDER" EntitySet="tbl_ORDER" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_AREAS_tbl_CITY" Association="FrontOfficeCRM.Store.FK_tbl_AREAS_tbl_CITY">
+            <End Role="tbl_CITY" EntitySet="tbl_CITY" />
+            <End Role="tbl_AREAS" EntitySet="tbl_AREAS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_BRANCH_tbl_AREAS" Association="FrontOfficeCRM.Store.FK_tbl_BRANCH_tbl_AREAS">
+            <End Role="tbl_AREAS" EntitySet="tbl_AREAS" />
+            <End Role="tbl_BRANCH" EntitySet="tbl_BRANCH" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_BRANCH_tbl_CITY" Association="FrontOfficeCRM.Store.FK_tbl_BRANCH_tbl_CITY">
+            <End Role="tbl_CITY" EntitySet="tbl_CITY" />
+            <End Role="tbl_BRANCH" EntitySet="tbl_BRANCH" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_BRANCH_tbl_COMPANY" Association="FrontOfficeCRM.Store.FK_tbl_BRANCH_tbl_COMPANY">
+            <End Role="tbl_COMPANY" EntitySet="tbl_COMPANY" />
+            <End Role="tbl_BRANCH" EntitySet="tbl_BRANCH" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_CATEGORY_tbl_BRANCH" Association="FrontOfficeCRM.Store.FK_tbl_CATEGORY_tbl_BRANCH">
+            <End Role="tbl_BRANCH" EntitySet="tbl_BRANCH" />
+            <End Role="tbl_CATEGORY" EntitySet="tbl_CATEGORY" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_CITY_tbl_COUNTRY" Association="FrontOfficeCRM.Store.FK_tbl_CITY_tbl_COUNTRY">
+            <End Role="tbl_COUNTRY" EntitySet="tbl_COUNTRY" />
+            <End Role="tbl_CITY" EntitySet="tbl_CITY" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_COMPANY_tbl_CITY" Association="FrontOfficeCRM.Store.FK_tbl_COMPANY_tbl_CITY">
+            <End Role="tbl_CITY" EntitySet="tbl_CITY" />
+            <End Role="tbl_COMPANY" EntitySet="tbl_COMPANY" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_ORDER_tbl_BRANCH" Association="FrontOfficeCRM.Store.FK_tbl_ORDER_tbl_BRANCH">
+            <End Role="tbl_BRANCH" EntitySet="tbl_BRANCH" />
+            <End Role="tbl_ORDER" EntitySet="tbl_ORDER" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tbl_Order_Tbl_Customer" Association="FrontOfficeCRM.Store.FK_Tbl_Order_Tbl_Customer">
+            <End Role="tbl_CUSTOMER" EntitySet="tbl_CUSTOMER" />
+            <End Role="tbl_ORDER" EntitySet="tbl_ORDER" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tbl_OrderDetail_Tbl_Order" Association="FrontOfficeCRM.Store.FK_Tbl_OrderDetail_Tbl_Order">
+            <End Role="tbl_ORDER" EntitySet="tbl_ORDER" />
+            <End Role="tbl_ORDER_DETAIL" EntitySet="tbl_ORDER_DETAIL" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tbl_OrderDetail_Tbl_Products" Association="FrontOfficeCRM.Store.FK_Tbl_OrderDetail_Tbl_Products">
+            <End Role="tbl_PRODUCTS" EntitySet="tbl_PRODUCTS" />
+            <End Role="tbl_ORDER_DETAIL" EntitySet="tbl_ORDER_DETAIL" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tbl_Products_Tbl_Category" Association="FrontOfficeCRM.Store.FK_Tbl_Products_Tbl_Category">
+            <End Role="tbl_CATEGORY" EntitySet="tbl_CATEGORY" />
+            <End Role="tbl_PRODUCTS" EntitySet="tbl_PRODUCTS" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="aspnet_Employees">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="FirstName" Type="varchar" MaxLength="50" />
+          <Property Name="LastName" Type="varchar" MaxLength="50" />
+          <Property Name="Gender" Type="char" MaxLength="1" />
+          <Property Name="BirthDate" Type="datetime" />
+          <Property Name="HireDate" Type="datetime" />
+          <Property Name="ResidenceAddress" Type="varchar" MaxLength="100" />
+          <Property Name="CityId" Type="int" />
+          <Property Name="ResidenceTel" Type="int" />
+          <Property Name="OfficeTel" Type="int" />
+          <Property Name="MobileNo" Type="int" />
+          <Property Name="Photo" Type="varchar" MaxLength="50" />
+          <Property Name="LastUpdatedDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="aspnet_Membership">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="ApplicationId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Password" Type="nvarchar" Nullable="false" MaxLength="128" />
+          <Property Name="PasswordFormat" Type="int" Nullable="false" />
+          <Property Name="PasswordSalt" Type="nvarchar" Nullable="false" MaxLength="128" />
+          <Property Name="MobilePIN" Type="nvarchar" MaxLength="16" />
+          <Property Name="Email" Type="nvarchar" MaxLength="256" />
+          <Property Name="LoweredEmail" Type="nvarchar" MaxLength="256" />
+          <Property Name="PasswordQuestion" Type="nvarchar" MaxLength="256" />
+          <Property Name="PasswordAnswer" Type="nvarchar" MaxLength="128" />
+          <Property Name="IsApproved" Type="bit" Nullable="false" />
+          <Property Name="IsLockedOut" Type="bit" Nullable="false" />
+          <Property Name="CreateDate" Type="datetime" Nullable="false" />
+          <Property Name="LastLoginDate" Type="datetime" Nullable="false" />
+          <Property Name="LastPasswordChangedDate" Type="datetime" Nullable="false" />
+          <Property Name="LastLockoutDate" Type="datetime" Nullable="false" />
+          <Property Name="FailedPasswordAttemptCount" Type="int" Nullable="false" />
+          <Property Name="FailedPasswordAttemptWindowStart" Type="datetime" Nullable="false" />
+          <Property Name="FailedPasswordAnswerAttemptCount" Type="int" Nullable="false" />
+          <Property Name="FailedPasswordAnswerAttemptWindowStart" Type="datetime" Nullable="false" />
+          <Property Name="Comment" Type="ntext" />
+        </EntityType>
+        <EntityType Name="aspnet_Roles">
+          <Key>
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="ApplicationId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="RoleId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="RoleName" Type="nvarchar" Nullable="false" MaxLength="256" />
+          <Property Name="LoweredRoleName" Type="nvarchar" Nullable="false" MaxLength="256" />
+          <Property Name="Description" Type="nvarchar" MaxLength="256" />
+        </EntityType>
+        <EntityType Name="aspnet_Users">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="ApplicationId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar" Nullable="false" MaxLength="256" />
+          <Property Name="LoweredUserName" Type="nvarchar" Nullable="false" MaxLength="256" />
+          <Property Name="MobileAlias" Type="nvarchar" MaxLength="16" />
+          <Property Name="IsAnonymous" Type="bit" Nullable="false" />
+          <Property Name="LastActivityDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="aspnet_UsersInRoles">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="RoleId" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbl_AREAS">
+          <Key>
+            <PropertyRef Name="AeraId" />
+          </Key>
+          <Property Name="AeraId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CityId" Type="int" Nullable="false" />
+          <Property Name="Area" Type="varchar" Nullable="false" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="tbl_BRANCH">
+          <Key>
+            <PropertyRef Name="BranchId" />
+          </Key>
+          <Property Name="BranchId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CompanyId" Type="int" Nullable="false" />
+          <Property Name="CityId" Type="int" />
+          <Property Name="AreaId" Type="int" />
+          <Property Name="Address" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="TaxType" Type="char" MaxLength="1" />
+          <Property Name="Tax" Type="decimal" Scale="2" />
+          <Property Name="DiscountType" Type="char" MaxLength="1" />
+          <Property Name="Discount" Type="decimal" Scale="2" />
+          <Property Name="DeliveryCharge" Type="float" />
+          <Property Name="MinOrder" Type="float" />
+          <Property Name="SmsYN" Type="bit" />
+          <Property Name="SmsToOrder" Type="int" />
+          <Property Name="SmsToComplaint" Type="int" />
+          <Property Name="OrderPrint" Type="bit" />
+          <Property Name="ComplaintPrint" Type="bit" />
+          <Property Name="ReservationPrint" Type="bit" />
+          <Property Name="EnquiryPrint" Type="bit" />
+          <Property Name="PrintToIP" Type="nvarchar" MaxLength="50" />
+          <Property Name="ActiveYN" Type="bit" />
+          <Property Name="NumberOfPrint" Type="int" />
+          <Property Name="NumberOfKitchenOrder" Type="int" />
+          <Property Name="SMSNO1" Type="nvarchar" MaxLength="50" />
+          <Property Name="SMSNO2" Type="nvarchar" MaxLength="50" />
+          <Property Name="SMSNO3" Type="nvarchar" MaxLength="50" />
+          <Property Name="OnOrderLaunchSms" Type="float" />
+          <Property Name="OnDispatchSms" Type="float" />
+          <Property Name="OnClosedSms" Type="float" />
+          <Property Name="OnCancelSms" Type="float" />
+          <Property Name="OnComplaintLaunch" Type="float" />
+          <Property Name="OnComplaintProcessSms" Type="float" />
+          <Property Name="OnComplaintResolveSms" Type="float" />
+          <Property Name="SmsOnLaunchReservation" Type="float" />
+          <Property Name="SmsOnConfirmReservation" Type="float" />
+          <Property Name="SmsOnDeclineReservation" Type="float" />
+          <Property Name="OnDispatchSms_Label" Type="varchar" MaxLength="50" />
+          <Property Name="OnClosedSms_Label" Type="varchar" MaxLength="50" />
+          <Property Name="OnCancelSms_Label" Type="varchar" MaxLength="50" />
+          <Property Name="OnComplaintLaunch_Label" Type="varchar" MaxLength="50" />
+          <Property Name="OnComplaintProcessSms_Label" Type="varchar" MaxLength="50" />
+          <Property Name="OnComplaintResolveSms_Label" Type="varchar" MaxLength="50" />
+          <Property Name="SmsOnLaunchReservation_Label" Type="varchar" MaxLength="50" />
+          <Property Name="SmsOnConfirmReservation_Label" Type="varchar" MaxLength="50" />
+          <Property Name="SmsOnDeclineReservation_Label" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tbl_CATEGORY">
+          <Key>
+            <PropertyRef Name="CategoryId" />
+          </Key>
+          <Property Name="CategoryId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="BranchId" Type="int" Nullable="false" />
+          <Property Name="Name" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Description" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tbl_CITY">
+          <Key>
+            <PropertyRef Name="CityId" />
+          </Key>
+          <Property Name="CityId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CountryId" Type="int" Nullable="false" />
+          <Property Name="City" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tbl_COMPANY">
+          <Key>
+            <PropertyRef Name="CompanyId" />
+          </Key>
+          <Property Name="CompanyId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="varchar" Nullable="false" MaxLength="80" />
+          <Property Name="Address" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="NearBy" Type="varchar" MaxLength="100" />
+          <Property Name="Phone1" Type="varchar" Nullable="false" MaxLength="11" />
+          <Property Name="Phone2" Type="varchar" MaxLength="11" />
+          <Property Name="Phone3" Type="varchar" MaxLength="11" />
+          <Property Name="CityId" Type="int" Nullable="false" />
+          <Property Name="StartGreetings" Type="varchar" MaxLength="50" />
+          <Property Name="EndGreetings" Type="varchar" MaxLength="50" />
+          <Property Name="Logo" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tbl_COUNTRY">
+          <Key>
+            <PropertyRef Name="CountryId" />
+          </Key>
+          <Property Name="CountryId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Country" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tbl_CUSTOMER">
+          <Key>
+            <PropertyRef Name="CustomerID" />
+          </Key>
+          <Property Name="CustomerID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CityId" Type="int" Nullable="false" />
+          <Property Name="Name" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Gender" Type="char" Nullable="false" MaxLength="1" />
+          <Property Name="Address1" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="Address2" Type="varchar" MaxLength="100" />
+          <Property Name="Phone1" Type="varchar" Nullable="false" MaxLength="11" />
+          <Property Name="Phone2" Type="varchar" MaxLength="11" />
+          <Property Name="Phone3" Type="varchar" MaxLength="11" />
+        </EntityType>
+        <EntityType Name="tbl_ORDER">
+          <Key>
+            <PropertyRef Name="OrderID" />
+          </Key>
+          <Property Name="OrderID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CallRef" Type="int" />
+          <Property Name="CustomerID" Type="int" Nullable="false" />
+          <Property Name="CompanyID" Type="int" Nullable="false" />
+          <Property Name="BranchId" Type="int" Nullable="false" />
+          <Property Name="OrderCounter" Type="int" />
+          <Property Name="OrderPriority" Type="varchar" MaxLength="50" />
+          <Property Name="OrderStatus" Type="varchar" MaxLength="50" />
+          <Property Name="OrderType" Type="varchar" MaxLength="50" />
+          <Property Name="PrintOn" Type="datetime" />
+          <Property Name="PrintYN" Type="bit" />
+          <Property Name="SMSOn" Type="datetime" />
+          <Property Name="SMSYN" Type="bit" />
+          <Property Name="OrderCreateBy" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="OrderCreateDateTime" Type="datetime" Nullable="false" />
+          <Property Name="OrderModifiedBy" Type="uniqueidentifier" />
+          <Property Name="OrderModifiedDateTime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tbl_ORDER_DETAIL">
+          <Key>
+            <PropertyRef Name="OrderDetailId" />
+          </Key>
+          <Property Name="OrderDetailId" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="OrderId" Type="int" Nullable="false" />
+          <Property Name="ProductId" Type="int" Nullable="false" />
+          <Property Name="ProductUnitSize" Type="int" Nullable="false" />
+          <Property Name="TaxAmount" Type="float" Nullable="false" />
+          <Property Name="Quantity" Type="int" Nullable="false" />
+          <Property Name="Discount" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbl_PRODUCTS">
+          <Key>
+            <PropertyRef Name="ProductId" />
+          </Key>
+          <Property Name="ProductId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="CategoryId" Type="int" Nullable="false" />
+          <Property Name="Description" Type="varchar" MaxLength="50" />
+          <Property Name="Price" Type="float" Nullable="false" />
+          <Property Name="UnitSize" Type="varchar" MaxLength="50" />
+          <Property Name="Picture" Type="varchar" MaxLength="150" />
+          <Property Name="IsEnable" Type="bit" Nullable="false" />
+        </EntityType>
+        <Association Name="FK__aspnet_Me__UserI__1EA48E88">
+          <End Role="aspnet_Users" Type="FrontOfficeCRM.Store.aspnet_Users" Multiplicity="1" />
+          <End Role="aspnet_Membership" Type="FrontOfficeCRM.Store.aspnet_Membership" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="aspnet_Users">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="aspnet_Membership">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__aspnet_Us__RoleI__46B27FE2">
+          <End Role="aspnet_Roles" Type="FrontOfficeCRM.Store.aspnet_Roles" Multiplicity="1" />
+          <End Role="aspnet_UsersInRoles" Type="FrontOfficeCRM.Store.aspnet_UsersInRoles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="aspnet_Roles">
+              <PropertyRef Name="RoleId" />
+            </Principal>
+            <Dependent Role="aspnet_UsersInRoles">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__aspnet_Us__UserI__45BE5BA9">
+          <End Role="aspnet_Users" Type="FrontOfficeCRM.Store.aspnet_Users" Multiplicity="1" />
+          <End Role="aspnet_UsersInRoles" Type="FrontOfficeCRM.Store.aspnet_UsersInRoles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="aspnet_Users">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="aspnet_UsersInRoles">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_aspnet_Employees_aspnet_Employees">
+          <End Role="aspnet_Employees" Type="FrontOfficeCRM.Store.aspnet_Employees" Multiplicity="1" />
+          <End Role="aspnet_Employees1" Type="FrontOfficeCRM.Store.aspnet_Employees" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="aspnet_Employees">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="aspnet_Employees1">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_aspnet_Employees_aspnet_Users">
+          <End Role="aspnet_Users" Type="FrontOfficeCRM.Store.aspnet_Users" Multiplicity="1" />
+          <End Role="aspnet_Employees" Type="FrontOfficeCRM.Store.aspnet_Employees" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="aspnet_Users">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="aspnet_Employees">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_aspnet_Employees_tbl_CITY">
+          <End Role="tbl_CITY" Type="FrontOfficeCRM.Store.tbl_CITY" Multiplicity="0..1" />
+          <End Role="aspnet_Employees" Type="FrontOfficeCRM.Store.aspnet_Employees" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_CITY">
+              <PropertyRef Name="CityId" />
+            </Principal>
+            <Dependent Role="aspnet_Employees">
+              <PropertyRef Name="CityId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Order_aspnet_Employees">
+          <End Role="aspnet_Employees" Type="FrontOfficeCRM.Store.aspnet_Employees" Multiplicity="1" />
+          <End Role="tbl_ORDER" Type="FrontOfficeCRM.Store.tbl_ORDER" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="aspnet_Employees">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="tbl_ORDER">
+              <PropertyRef Name="OrderCreateBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Order_aspnet_Employees_Modified_By">
+          <End Role="aspnet_Employees" Type="FrontOfficeCRM.Store.aspnet_Employees" Multiplicity="0..1" />
+          <End Role="tbl_ORDER" Type="FrontOfficeCRM.Store.tbl_ORDER" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="aspnet_Employees">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="tbl_ORDER">
+              <PropertyRef Name="OrderModifiedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Order_tbl_COMPANY">
+          <End Role="tbl_COMPANY" Type="FrontOfficeCRM.Store.tbl_COMPANY" Multiplicity="1" />
+          <End Role="tbl_ORDER" Type="FrontOfficeCRM.Store.tbl_ORDER" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_COMPANY">
+              <PropertyRef Name="CompanyId" />
+            </Principal>
+            <Dependent Role="tbl_ORDER">
+              <PropertyRef Name="CompanyID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_AREAS_tbl_CITY">
+          <End Role="tbl_CITY" Type="FrontOfficeCRM.Store.tbl_CITY" Multiplicity="1" />
+          <End Role="tbl_AREAS" Type="FrontOfficeCRM.Store.tbl_AREAS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_CITY">
+              <PropertyRef Name="CityId" />
+            </Principal>
+            <Dependent Role="tbl_AREAS">
+              <PropertyRef Name="CityId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_BRANCH_tbl_AREAS">
+          <End Role="tbl_AREAS" Type="FrontOfficeCRM.Store.tbl_AREAS" Multiplicity="0..1" />
+          <End Role="tbl_BRANCH" Type="FrontOfficeCRM.Store.tbl_BRANCH" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_AREAS">
+              <PropertyRef Name="AeraId" />
+            </Principal>
+            <Dependent Role="tbl_BRANCH">
+              <PropertyRef Name="AreaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_BRANCH_tbl_CITY">
+          <End Role="tbl_CITY" Type="FrontOfficeCRM.Store.tbl_CITY" Multiplicity="0..1" />
+          <End Role="tbl_BRANCH" Type="FrontOfficeCRM.Store.tbl_BRANCH" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_CITY">
+              <PropertyRef Name="CityId" />
+            </Principal>
+            <Dependent Role="tbl_BRANCH">
+              <PropertyRef Name="CityId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_BRANCH_tbl_COMPANY">
+          <End Role="tbl_COMPANY" Type="FrontOfficeCRM.Store.tbl_COMPANY" Multiplicity="1" />
+          <End Role="tbl_BRANCH" Type="FrontOfficeCRM.Store.tbl_BRANCH" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_COMPANY">
+              <PropertyRef Name="CompanyId" />
+            </Principal>
+            <Dependent Role="tbl_BRANCH">
+              <PropertyRef Name="CompanyId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_CATEGORY_tbl_BRANCH">
+          <End Role="tbl_BRANCH" Type="FrontOfficeCRM.Store.tbl_BRANCH" Multiplicity="1" />
+          <End Role="tbl_CATEGORY" Type="FrontOfficeCRM.Store.tbl_CATEGORY" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_BRANCH">
+              <PropertyRef Name="BranchId" />
+            </Principal>
+            <Dependent Role="tbl_CATEGORY">
+              <PropertyRef Name="BranchId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_CITY_tbl_COUNTRY">
+          <End Role="tbl_COUNTRY" Type="FrontOfficeCRM.Store.tbl_COUNTRY" Multiplicity="1" />
+          <End Role="tbl_CITY" Type="FrontOfficeCRM.Store.tbl_CITY" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_COUNTRY">
+              <PropertyRef Name="CountryId" />
+            </Principal>
+            <Dependent Role="tbl_CITY">
+              <PropertyRef Name="CountryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_COMPANY_tbl_CITY">
+          <End Role="tbl_CITY" Type="FrontOfficeCRM.Store.tbl_CITY" Multiplicity="1" />
+          <End Role="tbl_COMPANY" Type="FrontOfficeCRM.Store.tbl_COMPANY" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_CITY">
+              <PropertyRef Name="CityId" />
+            </Principal>
+            <Dependent Role="tbl_COMPANY">
+              <PropertyRef Name="CityId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_ORDER_tbl_BRANCH">
+          <End Role="tbl_BRANCH" Type="FrontOfficeCRM.Store.tbl_BRANCH" Multiplicity="1" />
+          <End Role="tbl_ORDER" Type="FrontOfficeCRM.Store.tbl_ORDER" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_BRANCH">
+              <PropertyRef Name="BranchId" />
+            </Principal>
+            <Dependent Role="tbl_ORDER">
+              <PropertyRef Name="BranchId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tbl_Order_Tbl_Customer">
+          <End Role="tbl_CUSTOMER" Type="FrontOfficeCRM.Store.tbl_CUSTOMER" Multiplicity="1" />
+          <End Role="tbl_ORDER" Type="FrontOfficeCRM.Store.tbl_ORDER" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_CUSTOMER">
+              <PropertyRef Name="CustomerID" />
+            </Principal>
+            <Dependent Role="tbl_ORDER">
+              <PropertyRef Name="CustomerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tbl_OrderDetail_Tbl_Order">
+          <End Role="tbl_ORDER" Type="FrontOfficeCRM.Store.tbl_ORDER" Multiplicity="1" />
+          <End Role="tbl_ORDER_DETAIL" Type="FrontOfficeCRM.Store.tbl_ORDER_DETAIL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_ORDER">
+              <PropertyRef Name="OrderID" />
+            </Principal>
+            <Dependent Role="tbl_ORDER_DETAIL">
+              <PropertyRef Name="OrderId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tbl_OrderDetail_Tbl_Products">
+          <End Role="tbl_PRODUCTS" Type="FrontOfficeCRM.Store.tbl_PRODUCTS" Multiplicity="1" />
+          <End Role="tbl_ORDER_DETAIL" Type="FrontOfficeCRM.Store.tbl_ORDER_DETAIL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_PRODUCTS">
+              <PropertyRef Name="ProductId" />
+            </Principal>
+            <Dependent Role="tbl_ORDER_DETAIL">
+              <PropertyRef Name="ProductId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tbl_Products_Tbl_Category">
+          <End Role="tbl_CATEGORY" Type="FrontOfficeCRM.Store.tbl_CATEGORY" Multiplicity="1" />
+          <End Role="tbl_PRODUCTS" Type="FrontOfficeCRM.Store.tbl_PRODUCTS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_CATEGORY">
+              <PropertyRef Name="CategoryId" />
+            </Principal>
+            <Dependent Role="tbl_PRODUCTS">
+              <PropertyRef Name="CategoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="p_GET_BRANCH_AREA_BY_BRANCH" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="BRANCH_ID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="p_GET_PRODUCT_BY_CATEGORY" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CATEGORY_ID" Type="int" Mode="In" />
+        </Function>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2008/09/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="FrontOfficeCRM" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+        <EntityContainer Name="FrontOfficeCRMContainer" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="aspnet_Membership" EntityType="FrontOfficeCRM.aspnet_Membership" />
+          <EntitySet Name="aspnet_Roles" EntityType="FrontOfficeCRM.aspnet_Roles" />
+          <EntitySet Name="tbl_CITY" EntityType="FrontOfficeCRM.tbl_CITY" />
+          <EntitySet Name="tbl_COUNTRY" EntityType="FrontOfficeCRM.tbl_COUNTRY" />
+          <AssociationSet Name="FK_tbl_CITY_tbl_COUNTRY" Association="FrontOfficeCRM.FK_tbl_CITY_tbl_COUNTRY">
+            <End Role="tbl_COUNTRY" EntitySet="tbl_COUNTRY" />
+            <End Role="tbl_CITY" EntitySet="tbl_CITY" />
+          </AssociationSet>
+          <EntitySet Name="aspnet_Employees" EntityType="FrontOfficeCRM.aspnet_Employees" />
+          <AssociationSet Name="FK_aspnet_Employees_aspnet_Employees" Association="FrontOfficeCRM.FK_aspnet_Employees_aspnet_Employees">
+            <End Role="aspnet_Employees" EntitySet="aspnet_Employees" />
+            <End Role="aspnet_Employees1" EntitySet="aspnet_Employees" />
+          </AssociationSet>
+          <AssociationSet Name="FK_aspnet_Employees_tbl_CITY" Association="FrontOfficeCRM.FK_aspnet_Employees_tbl_CITY">
+            <End Role="tbl_CITY" EntitySet="tbl_CITY" />
+            <End Role="aspnet_Employees" EntitySet="aspnet_Employees" />
+          </AssociationSet>
+          <EntitySet Name="aspnet_Users" EntityType="FrontOfficeCRM.aspnet_Users" />
+          <AssociationSet Name="FK_aspnet_Employees_aspnet_Users" Association="FrontOfficeCRM.FK_aspnet_Employees_aspnet_Users">
+            <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+            <End Role="aspnet_Employees" EntitySet="aspnet_Employees" />
+          </AssociationSet>
+          <AssociationSet Name="FK__aspnet_Me__UserI__1EA48E88" Association="FrontOfficeCRM.FK__aspnet_Me__UserI__1EA48E88">
+            <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+            <End Role="aspnet_Membership" EntitySet="aspnet_Membership" />
+          </AssociationSet>
+          <AssociationSet Name="aspnet_UsersInRoles" Association="FrontOfficeCRM.aspnet_UsersInRoles">
+            <End Role="aspnet_Roles" EntitySet="aspnet_Roles" />
+            <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+          </AssociationSet>
+          <FunctionImport Name="GetProductsByCategory" ReturnType="Collection(FrontOfficeCRM.GetProductsByCategory_Result)">
+          <Parameter Name="CATEGORY_ID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="GetBranchAreaByBranch" ReturnType="Collection(FrontOfficeCRM.GetBranchAreaByBranch_Result)">
+          <Parameter Name="BRANCH_ID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <EntitySet Name="tbl_ORDER_DETAIL" EntityType="FrontOfficeCRM.tbl_ORDER_DETAIL" />
+          <EntitySet Name="tbl_CATEGORY" EntityType="FrontOfficeCRM.tbl_CATEGORY" />
+          <EntitySet Name="tbl_PRODUCTS" EntityType="FrontOfficeCRM.tbl_PRODUCTS" />
+          <AssociationSet Name="FK_Tbl_Products_Tbl_Category" Association="FrontOfficeCRM.FK_Tbl_Products_Tbl_Category">
+            <End Role="tbl_CATEGORY" EntitySet="tbl_CATEGORY" />
+            <End Role="tbl_PRODUCTS" EntitySet="tbl_PRODUCTS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tbl_OrderDetail_Tbl_Products" Association="FrontOfficeCRM.FK_Tbl_OrderDetail_Tbl_Products">
+            <End Role="tbl_PRODUCTS" EntitySet="tbl_PRODUCTS" />
+            <End Role="tbl_ORDER_DETAIL" EntitySet="tbl_ORDER_DETAIL" />
+          </AssociationSet>
+          <EntitySet Name="tbl_CUSTOMER" EntityType="FrontOfficeCRM.tbl_CUSTOMER" />
+          <EntitySet Name="tbl_AREAS" EntityType="FrontOfficeCRM.tbl_AREAS" />
+          <AssociationSet Name="FK_tbl_AREAS_tbl_CITY" Association="FrontOfficeCRM.FK_tbl_AREAS_tbl_CITY">
+            <End Role="tbl_CITY" EntitySet="tbl_CITY" />
+            <End Role="tbl_AREAS" EntitySet="tbl_AREAS" />
+          </AssociationSet>
+          <EntitySet Name="tbl_COMPANY" EntityType="FrontOfficeCRM.tbl_COMPANY" />
+          <AssociationSet Name="FK_tbl_COMPANY_tbl_CITY" Association="FrontOfficeCRM.FK_tbl_COMPANY_tbl_CITY">
+            <End Role="tbl_CITY" EntitySet="tbl_CITY" />
+            <End Role="tbl_COMPANY" EntitySet="tbl_COMPANY" />
+          </AssociationSet>
+          <EntitySet Name="tbl_BRANCH" EntityType="FrontOfficeCRM.tbl_BRANCH" />
+          <AssociationSet Name="FK_tbl_BRANCH_tbl_AREAS" Association="FrontOfficeCRM.FK_tbl_BRANCH_tbl_AREAS">
+            <End Role="tbl_AREAS" EntitySet="tbl_AREAS" />
+            <End Role="tbl_BRANCH" EntitySet="tbl_BRANCH" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_BRANCH_tbl_CITY" Association="FrontOfficeCRM.FK_tbl_BRANCH_tbl_CITY">
+            <End Role="tbl_CITY" EntitySet="tbl_CITY" />
+            <End Role="tbl_BRANCH" EntitySet="tbl_BRANCH" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_BRANCH_tbl_COMPANY" Association="FrontOfficeCRM.FK_tbl_BRANCH_tbl_COMPANY">
+            <End Role="tbl_COMPANY" EntitySet="tbl_COMPANY" />
+            <End Role="tbl_BRANCH" EntitySet="tbl_BRANCH" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_CATEGORY_tbl_BRANCH" Association="FrontOfficeCRM.FK_tbl_CATEGORY_tbl_BRANCH">
+            <End Role="tbl_BRANCH" EntitySet="tbl_BRANCH" />
+            <End Role="tbl_CATEGORY" EntitySet="tbl_CATEGORY" />
+          </AssociationSet>
+          <EntitySet Name="tbl_ORDER" EntityType="FrontOfficeCRM.tbl_ORDER" />
+          <AssociationSet Name="FK_Order_aspnet_Employees" Association="FrontOfficeCRM.FK_Order_aspnet_Employees">
+            <End Role="aspnet_Employees" EntitySet="aspnet_Employees" />
+            <End Role="tbl_ORDER" EntitySet="tbl_ORDER" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Order_aspnet_Employees_Modified_By" Association="FrontOfficeCRM.FK_Order_aspnet_Employees_Modified_By">
+            <End Role="aspnet_Employees" EntitySet="aspnet_Employees" />
+            <End Role="tbl_ORDER" EntitySet="tbl_ORDER" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_ORDER_tbl_BRANCH" Association="FrontOfficeCRM.FK_tbl_ORDER_tbl_BRANCH">
+            <End Role="tbl_BRANCH" EntitySet="tbl_BRANCH" />
+            <End Role="tbl_ORDER" EntitySet="tbl_ORDER" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Order_tbl_COMPANY" Association="FrontOfficeCRM.FK_Order_tbl_COMPANY">
+            <End Role="tbl_COMPANY" EntitySet="tbl_COMPANY" />
+            <End Role="tbl_ORDER" EntitySet="tbl_ORDER" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tbl_Order_Tbl_Customer" Association="FrontOfficeCRM.FK_Tbl_Order_Tbl_Customer">
+            <End Role="tbl_CUSTOMER" EntitySet="tbl_CUSTOMER" />
+            <End Role="tbl_ORDER" EntitySet="tbl_ORDER" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tbl_OrderDetail_Tbl_Order" Association="FrontOfficeCRM.FK_Tbl_OrderDetail_Tbl_Order">
+            <End Role="tbl_ORDER" EntitySet="tbl_ORDER" />
+            <End Role="tbl_ORDER_DETAIL" EntitySet="tbl_ORDER_DETAIL" />
+          </AssociationSet>
+          </EntityContainer>
+        <EntityType Name="aspnet_Membership">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Type="Guid" Name="ApplicationId" Nullable="false" />
+          <Property Type="Guid" Name="UserId" Nullable="false" />
+          <Property Type="String" Name="Password" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="PasswordFormat" Nullable="false" />
+          <Property Type="String" Name="PasswordSalt" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="MobilePIN" MaxLength="16" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Email" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="LoweredEmail" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="PasswordQuestion" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="PasswordAnswer" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="IsApproved" Nullable="false" />
+          <Property Type="Boolean" Name="IsLockedOut" Nullable="false" />
+          <Property Type="DateTime" Name="CreateDate" Nullable="false" />
+          <Property Type="DateTime" Name="LastLoginDate" Nullable="false" />
+          <Property Type="DateTime" Name="LastPasswordChangedDate" Nullable="false" />
+          <Property Type="DateTime" Name="LastLockoutDate" Nullable="false" />
+          <Property Type="Int32" Name="FailedPasswordAttemptCount" Nullable="false" />
+          <Property Type="DateTime" Name="FailedPasswordAttemptWindowStart" Nullable="false" />
+          <Property Type="Int32" Name="FailedPasswordAnswerAttemptCount" Nullable="false" />
+          <Property Type="DateTime" Name="FailedPasswordAnswerAttemptWindowStart" Nullable="false" />
+          <Property Type="String" Name="Comment" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="aspnet_Users" Relationship="FrontOfficeCRM.FK__aspnet_Me__UserI__1EA48E88" FromRole="aspnet_Membership" ToRole="aspnet_Users" />
+        </EntityType>
+        <EntityType Name="aspnet_Roles">
+          <Key>
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Type="Guid" Name="ApplicationId" Nullable="false" />
+          <Property Type="Guid" Name="RoleId" Nullable="false" />
+          <Property Type="String" Name="RoleName" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="LoweredRoleName" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Description" MaxLength="256" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="aspnet_Users" Relationship="FrontOfficeCRM.aspnet_UsersInRoles" FromRole="aspnet_Roles" ToRole="aspnet_Users" />
+        </EntityType>
+        <EntityType Name="tbl_CITY">
+          <Key>
+            <PropertyRef Name="CityId" />
+          </Key>
+          <Property Type="Int32" Name="CityId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="CountryId" Nullable="false" />
+          <Property Type="String" Name="City" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="tbl_COUNTRY" Relationship="FrontOfficeCRM.FK_tbl_CITY_tbl_COUNTRY" FromRole="tbl_CITY" ToRole="tbl_COUNTRY" />
+          <NavigationProperty Name="aspnet_Employees" Relationship="FrontOfficeCRM.FK_aspnet_Employees_tbl_CITY" FromRole="tbl_CITY" ToRole="aspnet_Employees" />
+          <NavigationProperty Name="tbl_AREAS" Relationship="FrontOfficeCRM.FK_tbl_AREAS_tbl_CITY" FromRole="tbl_CITY" ToRole="tbl_AREAS" />
+          <NavigationProperty Name="tbl_COMPANY" Relationship="FrontOfficeCRM.FK_tbl_COMPANY_tbl_CITY" FromRole="tbl_CITY" ToRole="tbl_COMPANY" />
+          <NavigationProperty Name="tbl_BRANCH" Relationship="FrontOfficeCRM.FK_tbl_BRANCH_tbl_CITY" FromRole="tbl_CITY" ToRole="tbl_BRANCH" />
+        </EntityType>
+        <EntityType Name="tbl_COUNTRY">
+          <Key>
+            <PropertyRef Name="CountryId" />
+          </Key>
+          <Property Type="Int32" Name="CountryId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Country" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="tbl_CITY" Relationship="FrontOfficeCRM.FK_tbl_CITY_tbl_COUNTRY" FromRole="tbl_COUNTRY" ToRole="tbl_CITY" />
+        </EntityType>
+        <Association Name="FK_tbl_CITY_tbl_COUNTRY">
+          <End Type="FrontOfficeCRM.tbl_COUNTRY" Role="tbl_COUNTRY" Multiplicity="1" />
+          <End Type="FrontOfficeCRM.tbl_CITY" Role="tbl_CITY" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_COUNTRY">
+              <PropertyRef Name="CountryId" />
+            </Principal>
+            <Dependent Role="tbl_CITY">
+              <PropertyRef Name="CountryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="aspnet_Employees">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Type="Guid" Name="UserId" Nullable="false" />
+          <Property Type="String" Name="FirstName" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="LastName" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Gender" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Type="DateTime" Name="BirthDate" />
+          <Property Type="DateTime" Name="HireDate" />
+          <Property Type="String" Name="ResidenceAddress" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="CityId" />
+          <Property Type="Int32" Name="ResidenceTel" />
+          <Property Type="Int32" Name="OfficeTel" />
+          <Property Type="Int32" Name="MobileNo" />
+          <Property Type="String" Name="Photo" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="LastUpdatedDate" Nullable="false" />
+          <NavigationProperty Name="aspnet_Employees1" Relationship="FrontOfficeCRM.FK_aspnet_Employees_aspnet_Employees" FromRole="aspnet_Employees" ToRole="aspnet_Employees1" />
+          <NavigationProperty Name="aspnet_Employees2" Relationship="FrontOfficeCRM.FK_aspnet_Employees_aspnet_Employees" FromRole="aspnet_Employees1" ToRole="aspnet_Employees" />
+          <NavigationProperty Name="tbl_CITY" Relationship="FrontOfficeCRM.FK_aspnet_Employees_tbl_CITY" FromRole="aspnet_Employees" ToRole="tbl_CITY" />
+          <NavigationProperty Name="aspnet_Users" Relationship="FrontOfficeCRM.FK_aspnet_Employees_aspnet_Users" FromRole="aspnet_Employees" ToRole="aspnet_Users" />
+          <NavigationProperty Name="tbl_ORDER" Relationship="FrontOfficeCRM.FK_Order_aspnet_Employees" FromRole="aspnet_Employees" ToRole="tbl_ORDER" />
+          <NavigationProperty Name="tbl_ORDER1" Relationship="FrontOfficeCRM.FK_Order_aspnet_Employees_Modified_By" FromRole="aspnet_Employees" ToRole="tbl_ORDER" />
+        </EntityType>
+        <Association Name="FK_aspnet_Employees_aspnet_Employees">
+          <End Type="FrontOfficeCRM.aspnet_Employees" Role="aspnet_Employees" Multiplicity="1" />
+          <End Type="FrontOfficeCRM.aspnet_Employees" Role="aspnet_Employees1" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="aspnet_Employees">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="aspnet_Employees1">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_aspnet_Employees_tbl_CITY">
+          <End Type="FrontOfficeCRM.tbl_CITY" Role="tbl_CITY" Multiplicity="0..1" />
+          <End Type="FrontOfficeCRM.aspnet_Employees" Role="aspnet_Employees" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_CITY">
+              <PropertyRef Name="CityId" />
+            </Principal>
+            <Dependent Role="aspnet_Employees">
+              <PropertyRef Name="CityId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="aspnet_Users">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Type="Guid" Name="ApplicationId" Nullable="false" />
+          <Property Type="Guid" Name="UserId" Nullable="false" />
+          <Property Type="String" Name="UserName" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="LoweredUserName" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="MobileAlias" MaxLength="16" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="IsAnonymous" Nullable="false" />
+          <Property Type="DateTime" Name="LastActivityDate" Nullable="false" />
+          <NavigationProperty Name="aspnet_Employees" Relationship="FrontOfficeCRM.FK_aspnet_Employees_aspnet_Users" FromRole="aspnet_Users" ToRole="aspnet_Employees" />
+          <NavigationProperty Name="aspnet_Membership" Relationship="FrontOfficeCRM.FK__aspnet_Me__UserI__1EA48E88" FromRole="aspnet_Users" ToRole="aspnet_Membership" />
+          <NavigationProperty Name="aspnet_Roles" Relationship="FrontOfficeCRM.aspnet_UsersInRoles" FromRole="aspnet_Users" ToRole="aspnet_Roles" />
+        </EntityType>
+        <Association Name="FK_aspnet_Employees_aspnet_Users">
+          <End Type="FrontOfficeCRM.aspnet_Users" Role="aspnet_Users" Multiplicity="1" />
+          <End Type="FrontOfficeCRM.aspnet_Employees" Role="aspnet_Employees" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="aspnet_Users">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="aspnet_Employees">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__aspnet_Me__UserI__1EA48E88">
+          <End Type="FrontOfficeCRM.aspnet_Users" Role="aspnet_Users" Multiplicity="1" />
+          <End Type="FrontOfficeCRM.aspnet_Membership" Role="aspnet_Membership" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="aspnet_Users">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="aspnet_Membership">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="aspnet_UsersInRoles">
+          <End Type="FrontOfficeCRM.aspnet_Roles" Role="aspnet_Roles" Multiplicity="*" />
+          <End Type="FrontOfficeCRM.aspnet_Users" Role="aspnet_Users" Multiplicity="*" />
+        </Association>
+        <ComplexType Name="GetBranchAreaByBranch_Result">
+          <Property Type="String" Name="BranchAreaIdWithDailyCharges" Nullable="true" MaxLength="41" />
+          <Property Type="String" Name="AreaName" Nullable="false" MaxLength="100" />
+        </ComplexType>
+        <EntityType Name="tbl_ORDER_DETAIL">
+          <Key>
+            <PropertyRef Name="OrderDetailId" />
+          </Key>
+          <Property Type="Int64" Name="OrderDetailId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="OrderId" Nullable="false" />
+          <Property Type="Int32" Name="ProductId" Nullable="false" />
+          <Property Type="Int32" Name="ProductUnitSize" Nullable="false" />
+          <Property Type="Double" Name="TaxAmount" Nullable="false" />
+          <Property Type="Int32" Name="Quantity" Nullable="false" />
+          <Property Type="Int32" Name="Discount" Nullable="false" />
+          <NavigationProperty Name="tbl_PRODUCTS" Relationship="FrontOfficeCRM.FK_Tbl_OrderDetail_Tbl_Products" FromRole="tbl_ORDER_DETAIL" ToRole="tbl_PRODUCTS" />
+          <NavigationProperty Name="tbl_ORDER" Relationship="FrontOfficeCRM.FK_Tbl_OrderDetail_Tbl_Order" FromRole="tbl_ORDER_DETAIL" ToRole="tbl_ORDER" />
+        </EntityType>
+        <EntityType Name="tbl_CATEGORY">
+          <Key>
+            <PropertyRef Name="CategoryId" />
+          </Key>
+          <Property Type="Int32" Name="CategoryId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="BranchId" Nullable="false" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Description" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="tbl_PRODUCTS" Relationship="FrontOfficeCRM.FK_Tbl_Products_Tbl_Category" FromRole="tbl_CATEGORY" ToRole="tbl_PRODUCTS" />
+          <NavigationProperty Name="tbl_BRANCH" Relationship="FrontOfficeCRM.FK_tbl_CATEGORY_tbl_BRANCH" FromRole="tbl_CATEGORY" ToRole="tbl_BRANCH" />
+        </EntityType>
+        <EntityType Name="tbl_PRODUCTS">
+          <Key>
+            <PropertyRef Name="ProductId" />
+          </Key>
+          <Property Type="Int32" Name="ProductId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="CategoryId" Nullable="false" />
+          <Property Type="String" Name="Description" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Double" Name="Price" Nullable="false" />
+          <Property Type="String" Name="UnitSize" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Picture" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="IsEnable" Nullable="false" />
+          <NavigationProperty Name="tbl_CATEGORY" Relationship="FrontOfficeCRM.FK_Tbl_Products_Tbl_Category" FromRole="tbl_PRODUCTS" ToRole="tbl_CATEGORY" />
+          <NavigationProperty Name="tbl_ORDER_DETAIL" Relationship="FrontOfficeCRM.FK_Tbl_OrderDetail_Tbl_Products" FromRole="tbl_PRODUCTS" ToRole="tbl_ORDER_DETAIL" />
+        </EntityType>
+        <Association Name="FK_Tbl_Products_Tbl_Category">
+          <End Type="FrontOfficeCRM.tbl_CATEGORY" Role="tbl_CATEGORY" Multiplicity="1" />
+          <End Type="FrontOfficeCRM.tbl_PRODUCTS" Role="tbl_PRODUCTS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_CATEGORY">
+              <PropertyRef Name="CategoryId" />
+            </Principal>
+            <Dependent Role="tbl_PRODUCTS">
+              <PropertyRef Name="CategoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tbl_OrderDetail_Tbl_Products">
+          <End Type="FrontOfficeCRM.tbl_PRODUCTS" Role="tbl_PRODUCTS" Multiplicity="1" />
+          <End Type="FrontOfficeCRM.tbl_ORDER_DETAIL" Role="tbl_ORDER_DETAIL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_PRODUCTS">
+              <PropertyRef Name="ProductId" />
+            </Principal>
+            <Dependent Role="tbl_ORDER_DETAIL">
+              <PropertyRef Name="ProductId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="tbl_CUSTOMER">
+          <Key>
+            <PropertyRef Name="CustomerID" />
+          </Key>
+          <Property Type="Int32" Name="CustomerID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="CityId" Nullable="false" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Gender" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="Address1" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Address2" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Phone1" Nullable="false" MaxLength="11" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Phone2" MaxLength="11" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Phone3" MaxLength="11" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="tbl_ORDER" Relationship="FrontOfficeCRM.FK_Tbl_Order_Tbl_Customer" FromRole="tbl_CUSTOMER" ToRole="tbl_ORDER" />
+        </EntityType>
+        <ComplexType Name="GetProductsByCategory_Result">
+          <Property Type="String" Name="ProductIdWithPriceNdTaxDiscount" Nullable="true" MaxLength="125" />
+          <Property Type="String" Name="ProductName" Nullable="false" MaxLength="50" />
+        </ComplexType>
+        <EntityType Name="tbl_AREAS">
+          <Key>
+            <PropertyRef Name="AeraId" />
+          </Key>
+          <Property Type="Int32" Name="AeraId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="CityId" Nullable="false" />
+          <Property Type="String" Name="Area" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="tbl_CITY" Relationship="FrontOfficeCRM.FK_tbl_AREAS_tbl_CITY" FromRole="tbl_AREAS" ToRole="tbl_CITY" />
+          <NavigationProperty Name="tbl_BRANCH" Relationship="FrontOfficeCRM.FK_tbl_BRANCH_tbl_AREAS" FromRole="tbl_AREAS" ToRole="tbl_BRANCH" />
+        </EntityType>
+        <Association Name="FK_tbl_AREAS_tbl_CITY">
+          <End Type="FrontOfficeCRM.tbl_CITY" Role="tbl_CITY" Multiplicity="1" />
+          <End Type="FrontOfficeCRM.tbl_AREAS" Role="tbl_AREAS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_CITY">
+              <PropertyRef Name="CityId" />
+            </Principal>
+            <Dependent Role="tbl_AREAS">
+              <PropertyRef Name="CityId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="tbl_COMPANY">
+          <Key>
+            <PropertyRef Name="CompanyId" />
+          </Key>
+          <Property Type="Int32" Name="CompanyId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="80" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Address" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="NearBy" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Phone1" Nullable="false" MaxLength="11" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Phone2" MaxLength="11" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Phone3" MaxLength="11" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="CityId" Nullable="false" />
+          <Property Type="String" Name="StartGreetings" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="EndGreetings" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Logo" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="tbl_CITY" Relationship="FrontOfficeCRM.FK_tbl_COMPANY_tbl_CITY" FromRole="tbl_COMPANY" ToRole="tbl_CITY" />
+          <NavigationProperty Name="tbl_BRANCH" Relationship="FrontOfficeCRM.FK_tbl_BRANCH_tbl_COMPANY" FromRole="tbl_COMPANY" ToRole="tbl_BRANCH" />
+          <NavigationProperty Name="tbl_ORDER" Relationship="FrontOfficeCRM.FK_Order_tbl_COMPANY" FromRole="tbl_COMPANY" ToRole="tbl_ORDER" />
+        </EntityType>
+        <Association Name="FK_tbl_COMPANY_tbl_CITY">
+          <End Type="FrontOfficeCRM.tbl_CITY" Role="tbl_CITY" Multiplicity="1" />
+          <End Type="FrontOfficeCRM.tbl_COMPANY" Role="tbl_COMPANY" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_CITY">
+              <PropertyRef Name="CityId" />
+            </Principal>
+            <Dependent Role="tbl_COMPANY">
+              <PropertyRef Name="CityId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="tbl_BRANCH">
+          <Key>
+            <PropertyRef Name="BranchId" />
+          </Key>
+          <Property Type="Int32" Name="BranchId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="CompanyId" Nullable="false" />
+          <Property Type="Int32" Name="CityId" />
+          <Property Type="Int32" Name="AreaId" />
+          <Property Type="String" Name="Address" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="TaxType" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Type="Decimal" Name="Tax" Precision="18" Scale="2" />
+          <Property Type="String" Name="DiscountType" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Type="Decimal" Name="Discount" Precision="18" Scale="2" />
+          <Property Type="Double" Name="DeliveryCharge" />
+          <Property Type="Double" Name="MinOrder" />
+          <Property Type="Boolean" Name="SmsYN" />
+          <Property Type="Int32" Name="SmsToOrder" />
+          <Property Type="Int32" Name="SmsToComplaint" />
+          <Property Type="Boolean" Name="OrderPrint" />
+          <Property Type="Boolean" Name="ComplaintPrint" />
+          <Property Type="Boolean" Name="ReservationPrint" />
+          <Property Type="Boolean" Name="EnquiryPrint" />
+          <Property Type="String" Name="PrintToIP" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="ActiveYN" />
+          <Property Type="Int32" Name="NumberOfPrint" />
+          <Property Type="Int32" Name="NumberOfKitchenOrder" />
+          <Property Type="String" Name="SMSNO1" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="SMSNO2" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="SMSNO3" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Double" Name="OnOrderLaunchSms" />
+          <Property Type="Double" Name="OnDispatchSms" />
+          <Property Type="Double" Name="OnClosedSms" />
+          <Property Type="Double" Name="OnCancelSms" />
+          <Property Type="Double" Name="OnComplaintLaunch" />
+          <Property Type="Double" Name="OnComplaintProcessSms" />
+          <Property Type="Double" Name="OnComplaintResolveSms" />
+          <Property Type="Double" Name="SmsOnLaunchReservation" />
+          <Property Type="Double" Name="SmsOnConfirmReservation" />
+          <Property Type="Double" Name="SmsOnDeclineReservation" />
+          <Property Type="String" Name="OnDispatchSms_Label" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="OnClosedSms_Label" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="OnCancelSms_Label" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="OnComplaintLaunch_Label" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="OnComplaintProcessSms_Label" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="OnComplaintResolveSms_Label" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="SmsOnLaunchReservation_Label" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="SmsOnConfirmReservation_Label" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="SmsOnDeclineReservation_Label" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="tbl_AREAS" Relationship="FrontOfficeCRM.FK_tbl_BRANCH_tbl_AREAS" FromRole="tbl_BRANCH" ToRole="tbl_AREAS" />
+          <NavigationProperty Name="tbl_CITY" Relationship="FrontOfficeCRM.FK_tbl_BRANCH_tbl_CITY" FromRole="tbl_BRANCH" ToRole="tbl_CITY" />
+          <NavigationProperty Name="tbl_COMPANY" Relationship="FrontOfficeCRM.FK_tbl_BRANCH_tbl_COMPANY" FromRole="tbl_BRANCH" ToRole="tbl_COMPANY" />
+          <NavigationProperty Name="tbl_CATEGORY" Relationship="FrontOfficeCRM.FK_tbl_CATEGORY_tbl_BRANCH" FromRole="tbl_BRANCH" ToRole="tbl_CATEGORY" />
+          <NavigationProperty Name="tbl_ORDER" Relationship="FrontOfficeCRM.FK_tbl_ORDER_tbl_BRANCH" FromRole="tbl_BRANCH" ToRole="tbl_ORDER" />
+        </EntityType>
+        <Association Name="FK_tbl_BRANCH_tbl_AREAS">
+          <End Type="FrontOfficeCRM.tbl_AREAS" Role="tbl_AREAS" Multiplicity="0..1" />
+          <End Type="FrontOfficeCRM.tbl_BRANCH" Role="tbl_BRANCH" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_AREAS">
+              <PropertyRef Name="AeraId" />
+            </Principal>
+            <Dependent Role="tbl_BRANCH">
+              <PropertyRef Name="AreaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_BRANCH_tbl_CITY">
+          <End Type="FrontOfficeCRM.tbl_CITY" Role="tbl_CITY" Multiplicity="0..1" />
+          <End Type="FrontOfficeCRM.tbl_BRANCH" Role="tbl_BRANCH" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_CITY">
+              <PropertyRef Name="CityId" />
+            </Principal>
+            <Dependent Role="tbl_BRANCH">
+              <PropertyRef Name="CityId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_BRANCH_tbl_COMPANY">
+          <End Type="FrontOfficeCRM.tbl_COMPANY" Role="tbl_COMPANY" Multiplicity="1" />
+          <End Type="FrontOfficeCRM.tbl_BRANCH" Role="tbl_BRANCH" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_COMPANY">
+              <PropertyRef Name="CompanyId" />
+            </Principal>
+            <Dependent Role="tbl_BRANCH">
+              <PropertyRef Name="CompanyId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_CATEGORY_tbl_BRANCH">
+          <End Type="FrontOfficeCRM.tbl_BRANCH" Role="tbl_BRANCH" Multiplicity="1" />
+          <End Type="FrontOfficeCRM.tbl_CATEGORY" Role="tbl_CATEGORY" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_BRANCH">
+              <PropertyRef Name="BranchId" />
+            </Principal>
+            <Dependent Role="tbl_CATEGORY">
+              <PropertyRef Name="BranchId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="tbl_ORDER">
+          <Key>
+            <PropertyRef Name="OrderID" />
+          </Key>
+          <Property Type="Int32" Name="OrderID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="CallRef" />
+          <Property Type="Int32" Name="CustomerID" Nullable="false" />
+          <Property Type="Int32" Name="CompanyID" Nullable="false" />
+          <Property Type="Int32" Name="BranchId" Nullable="false" />
+          <Property Type="Int32" Name="OrderCounter" />
+          <Property Type="String" Name="OrderPriority" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="OrderStatus" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="OrderType" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="PrintOn" />
+          <Property Type="Boolean" Name="PrintYN" />
+          <Property Type="DateTime" Name="SMSOn" />
+          <Property Type="Boolean" Name="SMSYN" />
+          <Property Type="Guid" Name="OrderCreateBy" Nullable="false" />
+          <Property Type="DateTime" Name="OrderCreateDateTime" Nullable="false" />
+          <Property Type="Guid" Name="OrderModifiedBy" />
+          <Property Type="DateTime" Name="OrderModifiedDateTime" />
+          <NavigationProperty Name="aspnet_Employees" Relationship="FrontOfficeCRM.FK_Order_aspnet_Employees" FromRole="tbl_ORDER" ToRole="aspnet_Employees" />
+          <NavigationProperty Name="aspnet_Employees1" Relationship="FrontOfficeCRM.FK_Order_aspnet_Employees_Modified_By" FromRole="tbl_ORDER" ToRole="aspnet_Employees" />
+          <NavigationProperty Name="tbl_BRANCH" Relationship="FrontOfficeCRM.FK_tbl_ORDER_tbl_BRANCH" FromRole="tbl_ORDER" ToRole="tbl_BRANCH" />
+          <NavigationProperty Name="tbl_COMPANY" Relationship="FrontOfficeCRM.FK_Order_tbl_COMPANY" FromRole="tbl_ORDER" ToRole="tbl_COMPANY" />
+          <NavigationProperty Name="tbl_CUSTOMER" Relationship="FrontOfficeCRM.FK_Tbl_Order_Tbl_Customer" FromRole="tbl_ORDER" ToRole="tbl_CUSTOMER" />
+          <NavigationProperty Name="tbl_ORDER_DETAIL" Relationship="FrontOfficeCRM.FK_Tbl_OrderDetail_Tbl_Order" FromRole="tbl_ORDER" ToRole="tbl_ORDER_DETAIL" />
+        </EntityType>
+        <Association Name="FK_Order_aspnet_Employees">
+          <End Type="FrontOfficeCRM.aspnet_Employees" Role="aspnet_Employees" Multiplicity="1" />
+          <End Type="FrontOfficeCRM.tbl_ORDER" Role="tbl_ORDER" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="aspnet_Employees">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="tbl_ORDER">
+              <PropertyRef Name="OrderCreateBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Order_aspnet_Employees_Modified_By">
+          <End Type="FrontOfficeCRM.aspnet_Employees" Role="aspnet_Employees" Multiplicity="0..1" />
+          <End Type="FrontOfficeCRM.tbl_ORDER" Role="tbl_ORDER" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="aspnet_Employees">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="tbl_ORDER">
+              <PropertyRef Name="OrderModifiedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_ORDER_tbl_BRANCH">
+          <End Type="FrontOfficeCRM.tbl_BRANCH" Role="tbl_BRANCH" Multiplicity="1" />
+          <End Type="FrontOfficeCRM.tbl_ORDER" Role="tbl_ORDER" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_BRANCH">
+              <PropertyRef Name="BranchId" />
+            </Principal>
+            <Dependent Role="tbl_ORDER">
+              <PropertyRef Name="BranchId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Order_tbl_COMPANY">
+          <End Type="FrontOfficeCRM.tbl_COMPANY" Role="tbl_COMPANY" Multiplicity="1" />
+          <End Type="FrontOfficeCRM.tbl_ORDER" Role="tbl_ORDER" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_COMPANY">
+              <PropertyRef Name="CompanyId" />
+            </Principal>
+            <Dependent Role="tbl_ORDER">
+              <PropertyRef Name="CompanyID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tbl_Order_Tbl_Customer">
+          <End Type="FrontOfficeCRM.tbl_CUSTOMER" Role="tbl_CUSTOMER" Multiplicity="1" />
+          <End Type="FrontOfficeCRM.tbl_ORDER" Role="tbl_ORDER" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_CUSTOMER">
+              <PropertyRef Name="CustomerID" />
+            </Principal>
+            <Dependent Role="tbl_ORDER">
+              <PropertyRef Name="CustomerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tbl_OrderDetail_Tbl_Order">
+          <End Type="FrontOfficeCRM.tbl_ORDER" Role="tbl_ORDER" Multiplicity="1" />
+          <End Type="FrontOfficeCRM.tbl_ORDER_DETAIL" Role="tbl_ORDER_DETAIL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_ORDER">
+              <PropertyRef Name="OrderID" />
+            </Principal>
+            <Dependent Role="tbl_ORDER_DETAIL">
+              <PropertyRef Name="OrderId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs" Space="C-S">
+        <Alias Key="Model" Value="FrontOfficeCRM" />
+        <Alias Key="Target" Value="FrontOfficeCRM.Store" />
+        <EntityContainerMapping CdmEntityContainer="FrontOfficeCRMContainer" StorageEntityContainer="FrontOfficeCRMStoreContainer">
+          <EntitySetMapping Name="aspnet_Membership">
+            <EntityTypeMapping TypeName="FrontOfficeCRM.aspnet_Membership">
+              <MappingFragment StoreEntitySet="aspnet_Membership">
+                <ScalarProperty Name="Comment" ColumnName="Comment" />
+                <ScalarProperty Name="FailedPasswordAnswerAttemptWindowStart" ColumnName="FailedPasswordAnswerAttemptWindowStart" />
+                <ScalarProperty Name="FailedPasswordAnswerAttemptCount" ColumnName="FailedPasswordAnswerAttemptCount" />
+                <ScalarProperty Name="FailedPasswordAttemptWindowStart" ColumnName="FailedPasswordAttemptWindowStart" />
+                <ScalarProperty Name="FailedPasswordAttemptCount" ColumnName="FailedPasswordAttemptCount" />
+                <ScalarProperty Name="LastLockoutDate" ColumnName="LastLockoutDate" />
+                <ScalarProperty Name="LastPasswordChangedDate" ColumnName="LastPasswordChangedDate" />
+                <ScalarProperty Name="LastLoginDate" ColumnName="LastLoginDate" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="IsLockedOut" ColumnName="IsLockedOut" />
+                <ScalarProperty Name="IsApproved" ColumnName="IsApproved" />
+                <ScalarProperty Name="PasswordAnswer" ColumnName="PasswordAnswer" />
+                <ScalarProperty Name="PasswordQuestion" ColumnName="PasswordQuestion" />
+                <ScalarProperty Name="LoweredEmail" ColumnName="LoweredEmail" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="MobilePIN" ColumnName="MobilePIN" />
+                <ScalarProperty Name="PasswordSalt" ColumnName="PasswordSalt" />
+                <ScalarProperty Name="PasswordFormat" ColumnName="PasswordFormat" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="aspnet_Roles">
+            <EntityTypeMapping TypeName="FrontOfficeCRM.aspnet_Roles">
+              <MappingFragment StoreEntitySet="aspnet_Roles">
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="LoweredRoleName" ColumnName="LoweredRoleName" />
+                <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+                <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+                <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_CITY">
+            <EntityTypeMapping TypeName="FrontOfficeCRM.tbl_CITY">
+              <MappingFragment StoreEntitySet="tbl_CITY">
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="CountryId" ColumnName="CountryId" />
+                <ScalarProperty Name="CityId" ColumnName="CityId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_COUNTRY">
+            <EntityTypeMapping TypeName="FrontOfficeCRM.tbl_COUNTRY">
+              <MappingFragment StoreEntitySet="tbl_COUNTRY">
+                <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="CountryId" ColumnName="CountryId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="aspnet_Employees">
+            <EntityTypeMapping TypeName="FrontOfficeCRM.aspnet_Employees">
+              <MappingFragment StoreEntitySet="aspnet_Employees">
+                <ScalarProperty Name="LastUpdatedDate" ColumnName="LastUpdatedDate" />
+                <ScalarProperty Name="Photo" ColumnName="Photo" />
+                <ScalarProperty Name="MobileNo" ColumnName="MobileNo" />
+                <ScalarProperty Name="OfficeTel" ColumnName="OfficeTel" />
+                <ScalarProperty Name="ResidenceTel" ColumnName="ResidenceTel" />
+                <ScalarProperty Name="CityId" ColumnName="CityId" />
+                <ScalarProperty Name="ResidenceAddress" ColumnName="ResidenceAddress" />
+                <ScalarProperty Name="HireDate" ColumnName="HireDate" />
+                <ScalarProperty Name="BirthDate" ColumnName="BirthDate" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="aspnet_Users">
+            <EntityTypeMapping TypeName="FrontOfficeCRM.aspnet_Users">
+              <MappingFragment StoreEntitySet="aspnet_Users">
+                <ScalarProperty Name="LastActivityDate" ColumnName="LastActivityDate" />
+                <ScalarProperty Name="IsAnonymous" ColumnName="IsAnonymous" />
+                <ScalarProperty Name="MobileAlias" ColumnName="MobileAlias" />
+                <ScalarProperty Name="LoweredUserName" ColumnName="LoweredUserName" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="aspnet_UsersInRoles" TypeName="FrontOfficeCRM.aspnet_UsersInRoles" StoreEntitySet="aspnet_UsersInRoles">
+            <EndProperty Name="aspnet_Users">
+              <ScalarProperty Name="UserId" ColumnName="UserId" />
+            </EndProperty>
+            <EndProperty Name="aspnet_Roles">
+              <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <FunctionImportMapping FunctionImportName="GetProductsByCategory" FunctionName="FrontOfficeCRM.Store.p_GET_PRODUCT_BY_CATEGORY" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="FrontOfficeCRM.GetProductsByCategory_Result">
+                <ScalarProperty Name="ProductIdWithPriceNdTaxDiscount" ColumnName="ProductIdWithPriceNdTaxDiscount" />
+                <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetBranchAreaByBranch" FunctionName="FrontOfficeCRM.Store.p_GET_BRANCH_AREA_BY_BRANCH">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="FrontOfficeCRM.GetBranchAreaByBranch_Result">
+                <ScalarProperty Name="BranchAreaIdWithDailyCharges" ColumnName="BranchAreaIdWithDailyCharges" />
+                <ScalarProperty Name="AreaName" ColumnName="AreaName" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <EntitySetMapping Name="tbl_ORDER_DETAIL">
+            <EntityTypeMapping TypeName="FrontOfficeCRM.tbl_ORDER_DETAIL">
+              <MappingFragment StoreEntitySet="tbl_ORDER_DETAIL">
+                <ScalarProperty Name="Discount" ColumnName="Discount" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="TaxAmount" ColumnName="TaxAmount" />
+                <ScalarProperty Name="ProductUnitSize" ColumnName="ProductUnitSize" />
+                <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+                <ScalarProperty Name="OrderId" ColumnName="OrderId" />
+                <ScalarProperty Name="OrderDetailId" ColumnName="OrderDetailId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_CATEGORY">
+            <EntityTypeMapping TypeName="FrontOfficeCRM.tbl_CATEGORY">
+              <MappingFragment StoreEntitySet="tbl_CATEGORY">
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="BranchId" ColumnName="BranchId" />
+                <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_PRODUCTS">
+            <EntityTypeMapping TypeName="FrontOfficeCRM.tbl_PRODUCTS">
+              <MappingFragment StoreEntitySet="tbl_PRODUCTS">
+                <ScalarProperty Name="IsEnable" ColumnName="IsEnable" />
+                <ScalarProperty Name="Picture" ColumnName="Picture" />
+                <ScalarProperty Name="UnitSize" ColumnName="UnitSize" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_CUSTOMER">
+            <EntityTypeMapping TypeName="FrontOfficeCRM.tbl_CUSTOMER">
+              <MappingFragment StoreEntitySet="tbl_CUSTOMER">
+                <ScalarProperty Name="Phone3" ColumnName="Phone3" />
+                <ScalarProperty Name="Phone2" ColumnName="Phone2" />
+                <ScalarProperty Name="Phone1" ColumnName="Phone1" />
+                <ScalarProperty Name="Address2" ColumnName="Address2" />
+                <ScalarProperty Name="Address1" ColumnName="Address1" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="CityId" ColumnName="CityId" />
+                <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_AREAS">
+            <EntityTypeMapping TypeName="FrontOfficeCRM.tbl_AREAS">
+              <MappingFragment StoreEntitySet="tbl_AREAS">
+                <ScalarProperty Name="Area" ColumnName="Area" />
+                <ScalarProperty Name="CityId" ColumnName="CityId" />
+                <ScalarProperty Name="AeraId" ColumnName="AeraId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_COMPANY">
+            <EntityTypeMapping TypeName="FrontOfficeCRM.tbl_COMPANY">
+              <MappingFragment StoreEntitySet="tbl_COMPANY">
+                <ScalarProperty Name="Logo" ColumnName="Logo" />
+                <ScalarProperty Name="EndGreetings" ColumnName="EndGreetings" />
+                <ScalarProperty Name="StartGreetings" ColumnName="StartGreetings" />
+                <ScalarProperty Name="CityId" ColumnName="CityId" />
+                <ScalarProperty Name="Phone3" ColumnName="Phone3" />
+                <ScalarProperty Name="Phone2" ColumnName="Phone2" />
+                <ScalarProperty Name="Phone1" ColumnName="Phone1" />
+                <ScalarProperty Name="NearBy" ColumnName="NearBy" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_BRANCH">
+            <EntityTypeMapping TypeName="FrontOfficeCRM.tbl_BRANCH">
+              <MappingFragment StoreEntitySet="tbl_BRANCH">
+                <ScalarProperty Name="SmsOnDeclineReservation_Label" ColumnName="SmsOnDeclineReservation_Label" />
+                <ScalarProperty Name="SmsOnConfirmReservation_Label" ColumnName="SmsOnConfirmReservation_Label" />
+                <ScalarProperty Name="SmsOnLaunchReservation_Label" ColumnName="SmsOnLaunchReservation_Label" />
+                <ScalarProperty Name="OnComplaintResolveSms_Label" ColumnName="OnComplaintResolveSms_Label" />
+                <ScalarProperty Name="OnComplaintProcessSms_Label" ColumnName="OnComplaintProcessSms_Label" />
+                <ScalarProperty Name="OnComplaintLaunch_Label" ColumnName="OnComplaintLaunch_Label" />
+                <ScalarProperty Name="OnCancelSms_Label" ColumnName="OnCancelSms_Label" />
+                <ScalarProperty Name="OnClosedSms_Label" ColumnName="OnClosedSms_Label" />
+                <ScalarProperty Name="OnDispatchSms_Label" ColumnName="OnDispatchSms_Label" />
+                <ScalarProperty Name="SmsOnDeclineReservation" ColumnName="SmsOnDeclineReservation" />
+                <ScalarProperty Name="SmsOnConfirmReservation" ColumnName="SmsOnConfirmReservation" />
+                <ScalarProperty Name="SmsOnLaunchReservation" ColumnName="SmsOnLaunchReservation" />
+                <ScalarProperty Name="OnComplaintResolveSms" ColumnName="OnComplaintResolveSms" />
+                <ScalarProperty Name="OnComplaintProcessSms" ColumnName="OnComplaintProcessSms" />
+                <ScalarProperty Name="OnComplaintLaunch" ColumnName="OnComplaintLaunch" />
+                <ScalarProperty Name="OnCancelSms" ColumnName="OnCancelSms" />
+                <ScalarProperty Name="OnClosedSms" ColumnName="OnClosedSms" />
+                <ScalarProperty Name="OnDispatchSms" ColumnName="OnDispatchSms" />
+                <ScalarProperty Name="OnOrderLaunchSms" ColumnName="OnOrderLaunchSms" />
+                <ScalarProperty Name="SMSNO3" ColumnName="SMSNO3" />
+                <ScalarProperty Name="SMSNO2" ColumnName="SMSNO2" />
+                <ScalarProperty Name="SMSNO1" ColumnName="SMSNO1" />
+                <ScalarProperty Name="NumberOfKitchenOrder" ColumnName="NumberOfKitchenOrder" />
+                <ScalarProperty Name="NumberOfPrint" ColumnName="NumberOfPrint" />
+                <ScalarProperty Name="ActiveYN" ColumnName="ActiveYN" />
+                <ScalarProperty Name="PrintToIP" ColumnName="PrintToIP" />
+                <ScalarProperty Name="EnquiryPrint" ColumnName="EnquiryPrint" />
+                <ScalarProperty Name="ReservationPrint" ColumnName="ReservationPrint" />
+                <ScalarProperty Name="ComplaintPrint" ColumnName="ComplaintPrint" />
+                <ScalarProperty Name="OrderPrint" ColumnName="OrderPrint" />
+                <ScalarProperty Name="SmsToComplaint" ColumnName="SmsToComplaint" />
+                <ScalarProperty Name="SmsToOrder" ColumnName="SmsToOrder" />
+                <ScalarProperty Name="SmsYN" ColumnName="SmsYN" />
+                <ScalarProperty Name="MinOrder" ColumnName="MinOrder" />
+                <ScalarProperty Name="DeliveryCharge" ColumnName="DeliveryCharge" />
+                <ScalarProperty Name="Discount" ColumnName="Discount" />
+                <ScalarProperty Name="DiscountType" ColumnName="DiscountType" />
+                <ScalarProperty Name="Tax" ColumnName="Tax" />
+                <ScalarProperty Name="TaxType" ColumnName="TaxType" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="AreaId" ColumnName="AreaId" />
+                <ScalarProperty Name="CityId" ColumnName="CityId" />
+                <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
+                <ScalarProperty Name="BranchId" ColumnName="BranchId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_ORDER">
+            <EntityTypeMapping TypeName="FrontOfficeCRM.tbl_ORDER">
+              <MappingFragment StoreEntitySet="tbl_ORDER">
+                <ScalarProperty Name="OrderModifiedDateTime" ColumnName="OrderModifiedDateTime" />
+                <ScalarProperty Name="OrderModifiedBy" ColumnName="OrderModifiedBy" />
+                <ScalarProperty Name="OrderCreateDateTime" ColumnName="OrderCreateDateTime" />
+                <ScalarProperty Name="OrderCreateBy" ColumnName="OrderCreateBy" />
+                <ScalarProperty Name="SMSYN" ColumnName="SMSYN" />
+                <ScalarProperty Name="SMSOn" ColumnName="SMSOn" />
+                <ScalarProperty Name="PrintYN" ColumnName="PrintYN" />
+                <ScalarProperty Name="PrintOn" ColumnName="PrintOn" />
+                <ScalarProperty Name="OrderType" ColumnName="OrderType" />
+                <ScalarProperty Name="OrderStatus" ColumnName="OrderStatus" />
+                <ScalarProperty Name="OrderPriority" ColumnName="OrderPriority" />
+                <ScalarProperty Name="OrderCounter" ColumnName="OrderCounter" />
+                <ScalarProperty Name="BranchId" ColumnName="BranchId" />
+                <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+                <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+                <ScalarProperty Name="CallRef" ColumnName="CallRef" />
+                <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram Name="FrontOfficeCRM" ZoomLevel="89" >
+        <EntityTypeShape EntityType="FrontOfficeCRM.aspnet_Membership" Width="1.5" PointX="5.25" PointY="1.75" Height="4.5505582682291674" />
+        <EntityTypeShape EntityType="FrontOfficeCRM.aspnet_Roles" Width="1.5" PointX="0.75" PointY="6" Height="1.9210009765624996" />
+        <EntityTypeShape EntityType="FrontOfficeCRM.tbl_CITY" Width="1.5" PointX="3" PointY="9.875" Height="2.2496956380208317" />
+        <EntityTypeShape EntityType="FrontOfficeCRM.tbl_COUNTRY" Width="1.5" PointX="0.75" PointY="10.25" Height="1.4279589843749996" />
+        <AssociationConnector Association="FrontOfficeCRM.FK_tbl_CITY_tbl_COUNTRY" >
+          <ConnectorPoint PointX="2.25" PointY="10.9639794921875" />
+          <ConnectorPoint PointX="3" PointY="10.9639794921875" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="FrontOfficeCRM.aspnet_Employees" Width="1.5" PointX="5.25" PointY="7.875" Height="4.0575162760416648" />
+        <AssociationConnector Association="FrontOfficeCRM.FK_aspnet_Employees_aspnet_Employees" >
+          <ConnectorPoint PointX="5.7819230769230767" PointY="11.932516276041664" />
+          <ConnectorPoint PointX="5.7819230769230767" PointY="12.182516276041664" />
+          <ConnectorPoint PointX="6.2284615384615378" PointY="12.182516276041664" />
+          <ConnectorPoint PointX="6.2284615384615378" PointY="11.932516276041664" />
+        </AssociationConnector>
+        <AssociationConnector Association="FrontOfficeCRM.FK_aspnet_Employees_tbl_CITY" >
+          <ConnectorPoint PointX="4.5" PointY="10.903758138020832" />
+          <ConnectorPoint PointX="5.25" PointY="10.903758138020832" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="FrontOfficeCRM.aspnet_Users" Width="1.5" PointX="3" PointY="5.625" Height="2.5783902994791674" />
+        <AssociationConnector Association="FrontOfficeCRM.FK_aspnet_Employees_aspnet_Users" >
+          <ConnectorPoint PointX="4.5" PointY="8.0391951497395837" />
+          <ConnectorPoint PointX="5.25" PointY="8.0391951497395837" />
+        </AssociationConnector>
+        <AssociationConnector Association="FrontOfficeCRM.FK__aspnet_Me__UserI__1EA48E88" >
+          <ConnectorPoint PointX="4.5" PointY="5.9627791341145837" />
+          <ConnectorPoint PointX="5.25" PointY="5.9627791341145837" />
+        </AssociationConnector>
+        <AssociationConnector Association="FrontOfficeCRM.aspnet_UsersInRoles" >
+          <ConnectorPoint PointX="2.25" PointY="6.96050048828125" />
+          <ConnectorPoint PointX="3" PointY="6.96050048828125" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="FrontOfficeCRM.tbl_ORDER_DETAIL" Width="1.5" PointX="14.25" PointY="10" Height="2.4140429687499996" />
+        <EntityTypeShape EntityType="FrontOfficeCRM.tbl_CATEGORY" Width="1.5" PointX="9.75" PointY="13.25" Height="1.921000976562496" />
+        <EntityTypeShape EntityType="FrontOfficeCRM.tbl_PRODUCTS" Width="1.5" PointX="12" PointY="13" Height="2.5783902994791674" />
+        <AssociationConnector Association="FrontOfficeCRM.FK_Tbl_Products_Tbl_Category" >
+          <ConnectorPoint PointX="11.25" PointY="14.210500488281248" />
+          <ConnectorPoint PointX="12" PointY="14.210500488281248" />
+        </AssociationConnector>
+        <AssociationConnector Association="FrontOfficeCRM.FK_Tbl_OrderDetail_Tbl_Products" >
+          <ConnectorPoint PointX="13.5" PointY="14.289195149739584" />
+          <ConnectorPoint PointX="15" PointY="14.289195149739584" />
+          <ConnectorPoint PointX="15" PointY="12.41404296875" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="FrontOfficeCRM.tbl_CUSTOMER" Width="1.5" PointX="7.5" PointY="6" Height="2.5783902994791674" />
+        <EntityTypeShape EntityType="FrontOfficeCRM.tbl_AREAS" Width="1.5" PointX="5.25" PointY="12.875" Height="1.7566536458333388" />
+        <AssociationConnector Association="FrontOfficeCRM.FK_tbl_AREAS_tbl_CITY" >
+          <ConnectorPoint PointX="3.75" PointY="12.124695638020832" />
+          <ConnectorPoint PointX="3.75" PointY="13.753326822916669" />
+          <ConnectorPoint PointX="4.0729191666666669" PointY="13.753326822916669" />
+          <ConnectorPoint PointX="4.2395858333333329" PointY="13.753326822916669" />
+          <ConnectorPoint PointX="5.25" PointY="13.753326822916669" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="FrontOfficeCRM.tbl_COMPANY" Width="1.5" PointX="5.25" PointY="15.375" Height="3.2357796223958388" />
+        <AssociationConnector Association="FrontOfficeCRM.FK_tbl_COMPANY_tbl_CITY" >
+          <ConnectorPoint PointX="4.1562525" PointY="12.124695638020832" />
+          <ConnectorPoint PointX="4.1562525" PointY="16.992889811197919" />
+          <ConnectorPoint PointX="5.25" PointY="16.992889811197919" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="FrontOfficeCRM.tbl_BRANCH" Width="1.5" PointX="7.5" PointY="9.75" Height="8.9879361979166674" />
+        <AssociationConnector Association="FrontOfficeCRM.FK_tbl_BRANCH_tbl_AREAS" >
+          <ConnectorPoint PointX="6.75" PointY="13.753326822916669" />
+          <ConnectorPoint PointX="7.041666666666667" PointY="13.753326822916669" />
+          <ConnectorPoint PointX="7.208333333333333" PointY="13.753326822916669" />
+          <ConnectorPoint PointX="7.5" PointY="13.753326822916669" />
+        </AssociationConnector>
+        <AssociationConnector Association="FrontOfficeCRM.FK_tbl_BRANCH_tbl_CITY" >
+          <ConnectorPoint PointX="4.5" PointY="12.059855957031248" />
+          <ConnectorPoint PointX="5.6985897435897437" PointY="12.059855957031248" />
+          <ConnectorPoint PointX="5.86525641025641" PointY="12.059855957031248" />
+          <ConnectorPoint PointX="6.1451282051282048" PointY="12.059855957031248" />
+          <ConnectorPoint PointX="6.3117948717948709" PointY="12.059855957031248" />
+          <ConnectorPoint PointX="7.041666666666667" PointY="12.059855957031248" />
+          <ConnectorPoint PointX="7.208333333333333" PointY="12.059855957031248" />
+          <ConnectorPoint PointX="7.5" PointY="12.059855957031248" />
+        </AssociationConnector>
+        <AssociationConnector Association="FrontOfficeCRM.FK_tbl_BRANCH_tbl_COMPANY" >
+          <ConnectorPoint PointX="6.75" PointY="16.992889811197919" />
+          <ConnectorPoint PointX="7.5" PointY="16.992889811197919" />
+        </AssociationConnector>
+        <AssociationConnector Association="FrontOfficeCRM.FK_tbl_CATEGORY_tbl_BRANCH" >
+          <ConnectorPoint PointX="9" PointY="14.210500488281248" />
+          <ConnectorPoint PointX="9.75" PointY="14.210500488281248" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="FrontOfficeCRM.tbl_ORDER" Width="1.5" PointX="9.75" PointY="7" Height="4.7149055989583388" />
+        <AssociationConnector Association="FrontOfficeCRM.FK_Order_aspnet_Employees" >
+          <ConnectorPoint PointX="6.75" PointY="9.1641951497395837" />
+          <ConnectorPoint PointX="7.041666666666667" PointY="9.1641951497395837" />
+          <ConnectorPoint PointX="7.208333333333333" PointY="9.1641951497395837" />
+          <ConnectorPoint PointX="9.75" PointY="9.1641951497395837" />
+        </AssociationConnector>
+        <AssociationConnector Association="FrontOfficeCRM.FK_Order_aspnet_Employees_Modified_By" >
+          <ConnectorPoint PointX="6.75" PointY="9.4883475748697919" />
+          <ConnectorPoint PointX="7.041666666666667" PointY="9.4883475748697919" />
+          <ConnectorPoint PointX="7.208333333333333" PointY="9.4883475748697919" />
+          <ConnectorPoint PointX="9.75" PointY="9.4883475748697919" />
+        </AssociationConnector>
+        <AssociationConnector Association="FrontOfficeCRM.FK_tbl_ORDER_tbl_BRANCH" >
+          <ConnectorPoint PointX="9" PointY="10.732452799479169" />
+          <ConnectorPoint PointX="9.75" PointY="10.732452799479169" />
+        </AssociationConnector>
+        <AssociationConnector Association="FrontOfficeCRM.FK_Order_tbl_COMPANY" >
+          <ConnectorPoint PointX="6.75" PointY="15.376152846153847" />
+          <ConnectorPoint PointX="7.125" PointY="15.001152846153847" />
+          <ConnectorPoint PointX="7.125" PointY="8.8712902246093819" />
+          <ConnectorPoint PointX="9.75" PointY="8.8712902246093819" />
+        </AssociationConnector>
+        <AssociationConnector Association="FrontOfficeCRM.FK_Tbl_Order_Tbl_Customer" >
+          <ConnectorPoint PointX="9" PointY="7.7891951497395837" />
+          <ConnectorPoint PointX="9.75" PointY="7.7891951497395837" />
+        </AssociationConnector>
+        <AssociationConnector Association="FrontOfficeCRM.FK_Tbl_OrderDetail_Tbl_Order" >
+          <ConnectorPoint PointX="11.25" PointY="10.857452799479169" />
+          <ConnectorPoint PointX="14.25" PointY="10.857452799479169" />
+        </AssociationConnector>
+        </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
